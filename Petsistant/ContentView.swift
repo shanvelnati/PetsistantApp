@@ -1,4 +1,6 @@
 import SwiftUI
+import AudioToolbox
+
 
 struct ContentView: View {
     @State private var currentQuote = "Tap the lion to get a motivational quote! 🚀"
@@ -18,6 +20,7 @@ struct ContentView: View {
                                 self.isJumping = false
                                 self.fetchQuote()
                             }
+                            AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
                         }
                     }
                                     
