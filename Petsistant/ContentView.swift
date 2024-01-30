@@ -3,14 +3,14 @@ import AudioToolbox
 
 
 struct ContentView: View {
-    @State private var currentQuote = "Tap the lion to get a motivational quote! 🚀"
+    @State private var currentQuote = "Tap the ghost to get a sad quote! 👻"
     @State private var isJumping = false
 
     var body: some View {
         ZStack {
             Color.black.edgesIgnoringSafeArea(.all)
             VStack {
-                Text("🦁")
+                Text("👻")
                     .font(.system(size: 100))
                     .offset(y: isJumping ? -20 : 0)
                     .onTapGesture {
@@ -34,7 +34,7 @@ struct ContentView: View {
     }
 
     func fetchQuote() {
-        guard let url = URL(string: "https://chat-cb5srbnobq-uc.a.run.app") else {
+        guard let url = URL(string: "https://chat-cb5srbnobq-uc.a.run.app/?prompt=giveMeASadQoute") else {
             print("Invalid URL")
             return
         }
